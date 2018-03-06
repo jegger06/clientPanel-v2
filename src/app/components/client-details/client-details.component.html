@@ -23,7 +23,7 @@
           <span [ngClass]="hasBalance ? 'text-danger' : 'text-success'" >
             {{ client.balance | currency:'USD':'symbol' }}
           </span>
-          <small>
+          <small *ngIf="disableBalanceOnEdit">
             <a (click)="showBalanceUpdateInput = !showBalanceUpdateInput"><i class="fa fa-pencil"></i></a>
           </small>
         </h3>
